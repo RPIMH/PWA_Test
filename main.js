@@ -23,7 +23,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
         console.log('display-mode is standalone');
       }
     // Show the prompt
-    deferredPrompt.prompt();
+    setTimeout(function() {
+        deferredPrompt.prompt();
+      }, 2000);
     // Wait for the user to respond to the prompt
     deferredPrompt.userChoice
         .then((choiceResult) => {
