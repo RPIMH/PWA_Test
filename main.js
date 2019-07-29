@@ -17,6 +17,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
     console.log("before the install prompt");
+    $("#addToHomeButton").show();
 });
 
 
@@ -29,10 +30,6 @@ window.addEventListener('appinstalled', (evt) => {
 
 $( document ).ready(function() {
     console.log("doc ready");
-    if(deferredPrompt === undefined){
-        console.log("hiding the button");
-        $("#addToHomeButton").hide();
-    }
     $("#addToHomeButton").on('click', function(e) {
         console.log("clicked it");
         if (window.matchMedia('(display-mode: standalone)').matches) {
