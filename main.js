@@ -29,8 +29,11 @@ window.addEventListener('appinstalled', (evt) => {
 
 $( document ).ready(function() {
     console.log("doc ready");
+    if(deferredPrompt === undefined){
+        console.log("hiding the button");
+        $("#addToHomeButton").hide();
+    }
     $("#addToHomeButton").on('click', function(e) {
-
         console.log("clicked it");
         if (window.matchMedia('(display-mode: standalone)').matches) {
             console.log('display-mode is standalone');
