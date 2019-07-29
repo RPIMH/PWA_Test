@@ -27,6 +27,17 @@ self.addEventListener('message', function(event){
 
 self.addEventListener('activate', function(event){
     console.log('activated!');
+    var details = {
+        "body": "How about them apples?...",
+        "icon": "DN_icon_192x192.png",
+        "vibrate": [200, 100, 200, 100, 200, 100, 400],
+        "tag": "request",
+        "actions": [
+            { "action": "yes", "title": "Yes" },
+            { "action": "no", "title": "No" }
+        ]
+        }
+    self.registration.showNotification('Activated Service Worker!',details);
 });
 
 
