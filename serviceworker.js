@@ -1,5 +1,3 @@
-console.log("Hello from serviceworker.js!");
-
 
 
 var CACHE_NAME = 'my-site-cache';
