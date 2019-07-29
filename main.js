@@ -29,6 +29,10 @@ window.addEventListener('appinstalled', (evt) => {
 
 
 $( document ).ready(function() {
+    Notification.requestPermission(function(status) {
+        console.log('Notification permission status:', status);
+    });
+
     console.log("doc ready");
     $("#addToHomeButton").on('click', function(e) {
         console.log("clicked it");
@@ -50,5 +54,20 @@ $( document ).ready(function() {
             deferredPrompt = null;
             });
       });
+
+      $("#notificationButton").on('click', function(e) {
+
+        if (Notification.permission == 'granted') {
+                navigator.serviceWorker.getRegistration().then(function(reg) {
+                reg.showNotification('Woah big sale or something goin on!');
+            });
+        }
+
+      });
+
+
+
 });
+
+
 
