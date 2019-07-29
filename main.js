@@ -31,7 +31,7 @@ window.addEventListener('appinstalled', (evt) => {
 
 $("#addToHomeButton").on('click', function(e) {
 
-    
+    console.log("clicked it");
     if (window.matchMedia('(display-mode: standalone)').matches) {
         console.log('display-mode is standalone');
     }
