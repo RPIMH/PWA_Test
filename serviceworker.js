@@ -38,7 +38,6 @@ self.addEventListener('activate', function(event){
         ]
         }
     self.registration.showNotification('Activated Service Worker!',details);
-    cronNotification();
 });
 
 
@@ -100,7 +99,9 @@ self.addEventListener('notificationclick', function(event) {
         }
         }
         if (clients.openWindow) {
+         cronNotification();
          return clients.openWindow('/PWA_Test/?clicked=' + event.action);
+         
         }
     }));
 });
