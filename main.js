@@ -65,8 +65,8 @@ $( document ).ready(function() {
                     "vibrate": [200, 100, 200, 100, 200, 100, 400],
                     "tag": "request",
                     "actions": [
-                        { "action": "yes", "title": "Yes", "icon": "images/yes.png" },
-                        { "action": "no", "title": "No", "icon": "images/no.png" }
+                        { "action": "yes", "title": "Yes" },
+                        { "action": "no", "title": "No" }
                     ]
                     }
                 reg.showNotification('Woah big sale or something goin on!',details);
