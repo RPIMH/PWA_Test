@@ -35,7 +35,7 @@ $( document ).ready(function() {
     }
     
 
-    if(window.location.href.includes("clicked=yes")){
+    if(window.location.href.includes("clicked=no")){
         alert("Thanks for nothing!");
     }
     
