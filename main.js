@@ -27,26 +27,28 @@ window.addEventListener('appinstalled', (evt) => {
 
 
 
+$( document ).ready(function() {
+    console.log("doc ready");
+    $("#addToHomeButton").on('click', function(e) {
 
-
-$("#addToHomeButton").on('click', function(e) {
-
-    console.log("clicked it");
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        console.log('display-mode is standalone');
-    }
-    // hide our user interface that shows our A2HS button
-    $(this).hide();
-    // Show the prompt
-    deferredPrompt.prompt();
-    // Wait for the user to respond to the prompt
-    deferredPrompt.userChoice
-        .then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-        } else {
-            console.log('User dismissed the A2HS prompt');
+        console.log("clicked it");
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            console.log('display-mode is standalone');
         }
-        deferredPrompt = null;
-        });
-  });
+        // hide our user interface that shows our A2HS button
+        $(this).hide();
+        // Show the prompt
+        deferredPrompt.prompt();
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice
+            .then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            } else {
+                console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+            });
+      });
+});
+
