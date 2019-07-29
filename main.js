@@ -13,7 +13,7 @@ if ('serviceWorker' in navigator) {
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
-    //e.preventDefault();
+    e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
     console.log("before the install prompt");
@@ -59,7 +59,18 @@ $( document ).ready(function() {
 
         if (Notification.permission == 'granted') {
                 navigator.serviceWorker.getRegistration().then(function(reg) {
-                reg.showNotification('Woah big sale or something goin on!');
+                var details = {
+                    "body": "Did you want the sale?...",
+                    "icon": "DN_icon_192x192.png",
+                    "vibrate": [200, 100, 200, 100, 200, 100, 400],
+                    "tag": "request",
+                    "actions": [
+                        { "action": "yes", "title": "Yes", "icon": "images/yes.png" },
+                        { "action": "no", "title": "No", "icon": "images/no.png" }
+                    ]
+                    }
+                reg.showNotification('Woah big sale or something goin on!',details);
+
             });
         }
 
