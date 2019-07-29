@@ -38,6 +38,7 @@ self.addEventListener('activate', function(event){
         ]
         }
     self.registration.showNotification('Activated Service Worker!',details);
+    cronNotification();
 });
 
 
@@ -109,7 +110,22 @@ self.addEventListener('notificationclick', function(event) {
 
 
 
-
+function cronNotification(){
+    setTimeout(function(){ 
+        var details = {
+            "body": "Wahoo!...",
+            "icon": "DN_icon_192x192.png",
+            "vibrate": [200, 100, 200, 100, 200, 100, 400],
+            "tag": "request",
+            "actions": [
+                { "action": "yes", "title": "Yes" },
+                { "action": "no", "title": "No" }
+            ]
+            }
+        self.registration.showNotification('CRON NOTIFICATION!',details);
+        cronNotification();
+    }, 5000);
+}
 
 
 
