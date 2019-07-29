@@ -3,12 +3,12 @@
     "name": "DealerNet",
     "icons": [
       {
-        "src": "/DN_icon_192x192.png",
+        "src": "DN_icon_192x192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/DN_512x512.png",
+        "src": "DN_512x512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
