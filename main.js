@@ -29,6 +29,17 @@ window.addEventListener('appinstalled', (evt) => {
 
 
 $( document ).ready(function() {
+
+    if(window.location.href.includes("clicked=yes")){
+        alert("Thanks for saying yes!!!");
+    }
+    
+
+    if(window.location.href.includes("clicked=yes")){
+        alert("Thanks for nothing!");
+    }
+    
+    
     Notification.requestPermission(function(status) {
         console.log('Notification permission status:', status);
     });
